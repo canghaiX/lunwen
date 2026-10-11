@@ -1,0 +1,5 @@
+seed: 7
+input: data/pilot.jsonl
+output: outputs
+label_order: [entailed, contradicted, unknown]
+actions: [keep, verify, update, invalidate, human_review]

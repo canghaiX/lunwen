@@ -1,0 +1,8 @@
+seed: 7
+epochs: 3
+batch_size: 16
+learning_rate: 0.00001
+lambda_change: 1.0
+lambda_condition: 1.0
+lambda_evidence: 0.5
+lambda_invariance: 1.0

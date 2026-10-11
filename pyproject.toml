@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "revimpact"
+version = "0.1.0"
+description = "Revision-aware conditional knowledge updating experiments"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pydantic>=2.0",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+ml = ["torch>=2.0", "transformers>=4.40", "datasets>=2.18", "accelerate>=0.28", "jinja2>=3.1.0"]
+serving = ["sglang>=0.5.21"]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+
+[project.scripts]
+revimpact-generate = "revimpact.data.synthetic:main"
+revimpact-evaluate = "revimpact.evaluation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
